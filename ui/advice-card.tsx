@@ -5,6 +5,12 @@ import { Advice } from "@/lib/@types/types"
 import dividerMobile from "@/public/pattern-divider-desktop.svg"
 import diceIcon from "@/public/icon-dice.svg"
 
+/**
+ * Component that displays a tip. It performs a data request and can generate 
+ * several tips. There is no hourly limit, just click on the dice icon.
+ * 
+ * @returns {JSX.Element} Element
+ */
 const AdviceCard = () => {
     const [advice, setAdvice] = useState<Advice>()
 
