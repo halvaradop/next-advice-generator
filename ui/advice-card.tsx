@@ -1,9 +1,11 @@
 "use client"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
 import { Advice } from "@/lib/@types/types"
 import dividerMobile from "@/public/pattern-divider-desktop.svg"
 import diceIcon from "@/public/icon-dice.svg"
+import { diceVariants } from "./motions/advice-card.motion"
 
 /**
  * Component that displays a tip. It performs a data request and can generate 
@@ -37,9 +39,13 @@ const AdviceCard = () => {
             <h1 className="text-green text-lg tracking-wider">ADVICE # {advice?.slip.id}</h1>
             <p className="mt-4 mb-10 text-cyan text-3xl">"{advice?.slip.advice}"</p>
             <Image className="mx-auto" src={dividerMobile} alt="divider image" priority />
-            <figure className="w-14 h-14 mx-auto grid place-content-center rounded-full absolute inset-x-0 -bottom-7 shadow-dice bg-green hover:cursor-pointer" onClick={() => getAdvice()}>
+            <motion.figure className="w-14 h-14 mx-auto grid place-content-center rounded-full absolute inset-x-0 -bottom-7 shadow-dice bg-green hover:cursor-pointer" 
+                onClick={() => getAdvice()} 
+                variants={diceVariants}
+                whileHover="hover"
+            >
                 <Image src={diceIcon} alt="dice icon" />
-            </figure>
+            </motion.figure>
         </article>
     )
 }
