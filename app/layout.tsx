@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   creator: "x",
   applicationName: "Advice generator",
   keywords: "advices, website, grow personal, healthy life",
-  metadataBase: new URL("https://"),
+  metadataBase: new URL("https://advice-generator.com"),
   robots: "index, follow",
   openGraph: {
     title: "Advice generator",
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     countryName: "Colombia",
     description: "Website that tell you several advice that you can take",
     siteName: "Advice generator",
+    emails: "hernanvid123@gmail.com",    
   }
 };
 
